@@ -8,7 +8,7 @@
 # 1. Project Overview
 
 ## Project Title
-[Write your project title here]
+[Write your project title here.]
 
 ## Project Description
 [Briefly explain what the project is about]
