@@ -8,10 +8,10 @@
 # 1. Project Overview
 
 ## Project Title
-[Write your project title here.]
+Tournament Scoring System Bram van Exel
 
 ## Project Description
-[Briefly explain what the project is about]
+In this project I will be designing, devolping and testing a scoring system software for a tournament.
 
 ## Start Date
 [Unknown / add later]
@@ -31,9 +31,9 @@
 
 ---
 ## Session [01]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+**Date:** []  
+**Time spent:** []  
+**Focus:**  
 
 ### Problems / Challenges
 - 
