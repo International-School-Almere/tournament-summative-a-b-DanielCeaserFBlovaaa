@@ -31,30 +31,29 @@ In this project I will be designing, devolping and testing a scoring system soft
 
 ---
 ## Session [01]
-**Date:** []  
-**Time spent:** []  
+**Date:** [31/03/2026]  
+**Time spent:** [45 Minutes]  
 **Focus:**  
-
+In this session I added import random, import tkinter and the global variables. I also added the funtions of adding participants, teams, events and results, as well as giving the participants, teams and events a random ID.
 ### Problems / Challenges
-- 
-- 
+- Creating a good structure
+
 
 ### Solutions / Actions Taken
-- 
-- 
+- Started explaining what certain things do, as well as seperating them in sections
+
 
 ### Evidence
 - [Added code]
-- [Updated design]
-- [Created sketch]
-- [Researched source]
-- [Uploaded image/screenshot]
+
 
 ### Reflection
 - What went well?
+I was able to do this task fairly quickly without help. I was able to use my pseudocode and flowchart with the functions that had to be added, this allowed me to do it quickly and easily, and gave me time to already work on creating ID's for the tasks required. 
 - What needs improvement?
+My structuring skills in coding does need some improvement, as this will make it easier to go back to older code to change/improve it. However I did in the end improve it to make it more structured, which will help me in the long term.
 - What did I learn?
-
+I learned to seperate the sections and add comments/details to certain lines in the code to explain it and allow for future changes to be easier and more understandable for me.
 ---
 
 ## Session [02]
