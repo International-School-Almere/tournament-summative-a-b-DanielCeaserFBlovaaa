@@ -21,6 +21,8 @@ In this project I will be designing, devolping and testing a scoring system soft
 
 ## File list.
 
+GUI.py
+
 ## (Dependencies) API / library / module list.
 ---
 

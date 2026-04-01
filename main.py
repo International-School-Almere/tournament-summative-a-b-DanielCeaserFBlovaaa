@@ -1,6 +1,6 @@
 #main file for the Tournament App.
 import random       #for user/team/event ID creation
-import tkinter as tk
+
 
 #File saving
 import json         #for saving data in a JSON file
@@ -74,3 +74,6 @@ def event_ID():
     return random.randint(2000, 2999)
 
 #-------------------------------------------#
+
+
+
