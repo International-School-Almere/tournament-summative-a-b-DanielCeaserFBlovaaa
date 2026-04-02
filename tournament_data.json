@@ -1,0 +1,28 @@
+{
+    "participants": {
+        "Participant Name": {},
+        "Age": 0,
+        "Participant ID": []
+        
+    },
+    "teams": {
+        "Team Name": {},
+        "Names of members": [],
+        "Team ID": []
+        
+    },
+
+    "events": {
+        "Event Name": {},
+        "Event Type": {},
+        "Event Category": {},
+        "Event ID": {}
+        },
+    
+
+    "results": {
+        "Event Name": {},
+        "Participant/Team Name": {},
+        "Position": {}
+    }
+}

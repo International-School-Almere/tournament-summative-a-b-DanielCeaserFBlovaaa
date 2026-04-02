@@ -1,72 +1,90 @@
 import tkinter as tk
-
+from turtle import onclick
+root = tk.Tk() 
+root.title("The Scoring System App")
+root.geometry("1000x700") 
 from main import add_participant, add_team, create_event, enter_results #This imports the fucntions from main.py to this file
 
-#-----------------------------#
-#Main Menu page
-root=tk.Tk()
-root.title("The Scoring System App")
-root.geometry("1000x700")
 
+#-----------------------------#
+#Main Frame and button functions
+def show_main_frame():
+    main_frame = tk.Frame(root)
+    main_frame.pack(fill="both", expand=True) #Fills the entire window, expands/decreases in size with the size of the window
+
+    # Here is where I will be creating the buttons for the main menu
+    addparticipant_button = tk.Button(root, text="Add a participant", command = show_add_participant_page) 
+    addparticipant_button.pack(pady=10)
+
+
+    addteam_button = tk.Button(root, text="Add a team", command = show_add_team_page)
+    addteam_button.pack(pady=10)
+
+
+    createevent_button = tk.Button(root, text="Create an event", command = show_create_event_page) 
+    createevent_button.pack(pady=10) 
+
+
+    enterresults_button = tk.Button(root, text="Enter results", command = show_enter_results_page) 
+    enterresults_button.pack(pady=10)
+
+
+    exit_button = tk.Button(root, text="Exit", command=root.quit) 
+    exit_button.pack(pady=10)
+
+    #pack(pady=10) is used to display the buttons, where "pady" spaces them out to add structure and better visuals
+
+#Functions 
 #Add Participant page
-root_participant=tk.Tk()
-root_participant.title("Add a Participant")
-root_participant.geometry("1000x700")
+def show_add_participant_page():
+   
+    entry_name = tk.Entry(root)
+    entry_name.pack()
+    entry_name.pack(pady=10)
+    entry_name.insert(0, "Enter your name")
+    entry_name.bind("<FocusIn>", onclick) #this will clear the entry box when the user clicks on it, for better structure and a more professional app
+    entry_age = tk.Entry(root)
+    entry_age.pack()
+    entry_age.pack(pady=10)
+    entry_age.insert(0, "Enter your age")
+    entry_age.bind("<FocusIn>", onclick) #this will clear the entry box when the user clicks on it, for better structure and a more professional app
+    submit_button = tk.Button(root, text="Submit", command=add_participant)
+    submit_button.pack(pady=10)
+
+    if onclick(submit_button) == True:
+        add_participant()
+        show_main_frame() #this will return the user to the main menu after they have added a participant, for better structure and a more professional app
+
 
 #Add Team page
-root_team=tk.Tk()
-root_team.title("Add a Team")
-root_team.geometry("1000x700")
+def show_add_team_page():
+    clear_frame(root) 
+    open 
+
 
 #Create Event page
-root_event=tk.Tk()
-root_event.title("Create an Event")
-root_event.geometry("1000x700")
+def show_create_event_page():
+    clear_frame(root)
+    open
 
 #Enter Results page
-root_results=tk.Tk()
-root_results.title("Enter Results")
-root_results.geometry("1000x700")
+def show_enter_results_page():
+    clear_frame(root)
+    open
 
 
-# Here is where I will be creating the buttons for the main menu
-addparticipant_button = tk.Button(root, text="Add a participant")
-addparticipant_button.pack(pady=10)
+#Clear Function
+def clear_frame(frame):
+    for widget in frame.winfo_children():   
+        widget.destroy()
+#This will be used to clear the previous page when a new button is clicked by the user, for better structure and a more professional app
 
-
-addteam_button = tk.Button(root, text="Add a team")
-addteam_button.pack(pady=10)
-
-
-createevent_button = tk.Button(root, text="Create an event")
-createevent_button.pack(pady=10) 
-
-
-enterresults_button = tk.Button(root, text="Enter results")
-enterresults_button.pack(pady=10)
-
-
-exit_button = tk.Button(root, text="Exit", command=root.quit) #command=root.quit will close the app when exit button is clicked
-exit_button.pack(pady=10)
-
-#pack(pady=10) is used to display the buttons, where "pady" spaces them out to add structure and better visuals
 
 #------------------------------#
-#linking buttons to functions from main.py using if/elif/else
 
 
-if addparticipant_button:
-    root_participant.mainloop() #this will open the add participant page when the button is clicked
-elif addteam_button:
-    root_team.mainloop() #this will open the add team page when the button is clicked
-elif createevent_button:            
-    root_event.mainloop() #this will open the create event page when the button is clicked
-elif enterresults_button:
-    root_results.mainloop() #this will open the enter results page when the button is clicked
-elif exit_button:
-    root.quit()
-         
+#Start of the app
 
+show_main_frame() #this will show the main menu page when the app is opened
 
-
-root.mainloop()
+root.mainloop() 

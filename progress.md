@@ -22,6 +22,7 @@ In this project I will be designing, devolping and testing a scoring system soft
 ## File list.
 
 GUI.py
+tournament_data.json
 
 ## (Dependencies) API / library / module list.
 ---
@@ -59,17 +60,17 @@ I learned to seperate the sections and add comments/details to certain lines in 
 ---
 
 ## Session [02]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+**Date:** [02/04/2026]  
+**Time spent:** [1 Hour]  
+**Focus:** [I have started on the JSON file handling, and have worked a lot on the GUI.]
 
 ### Problems / Challenges
-- 
-- 
+- All pages were opening on start of program, only wanted the main menu to open.
+- Buttons aren't working yet
 
 ### Solutions / Actions Taken
-- 
-- 
+- I only used tk.Tk() for the main menu, when I used them for all all pages opened, now only one does. I also added show_main_frame() at the bottom to make sure thats the page that opens when app is started. 
+- I have not yet fixed the button problem, however the "exit" button is working but this problem will be added to #7 below.
 
 ### Evidence
 - [Added code]
@@ -116,7 +117,7 @@ I learned to seperate the sections and add comments/details to certain lines in 
 
 | Problem | Cause | Fix | Status |
 |---|---|---|---|
-| [Describe issue] | [Why it happened] | [What you did] | Open / Fixed |
+| All buttons except for the exit button do not work | [Why it happened] | [What you did] | Open / Fixed |
 | [Describe issue] | [Why it happened] | [What you did] | Open / Fixed |
 
 ---
