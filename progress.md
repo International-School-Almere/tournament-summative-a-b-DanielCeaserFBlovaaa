@@ -73,41 +73,42 @@ I learned to seperate the sections and add comments/details to certain lines in 
 
 ### Evidence
 - [Added code]
-- [Updated design]
-- [Created sketch]
-- [Researched source]
-- [Uploaded image/screenshot]
+
 
 ### Reflection
 - What went well?
+I did a lot of problem solving on the start-up of the app, which allowed to fix a great amount of things not working and add a lot of things.
 - What needs improvement?
+My structure in coding, now everything is all over the place like functions at the bottom which would be better at the top, and more like that. As well as different files for different things which might make it harder.
 - What did I learn?
+I learned a lot of basic coding rules, for example that tk.Tk() can only be used for one of the pages, otherwise all the pages open at the start.
 
 ---
-## Session [02]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+## Session [03]
+**Date:** [03/04/2026]  
+**Time spent:** [75 Minutes]  
+**Focus:** [I fixed a lot with the GUI and mainly the buttons, however this is not finished yet but I have set myself up well to finish this in the next session. I also made some small changes/fixes, for example with the JSON file handling in which I was using dictionairies which makes it a little bit more challanging and is unnecesairy (for now).]
 
 ### Problems / Challenges
-- 
+- Buttons of GIU and the programs structure
 - 
 
 ### Solutions / Actions Taken
-- 
+- I have (for now, maybe for always) put the GUI in main, this makes it a little more easy and organized for me, which will help me a lot
 - 
 
 ### Evidence
 - [Added code]
-- [Updated design]
-- [Created sketch]
-- [Researched source]
-- [Uploaded image/screenshot]
+
 
 ### Reflection
 - What went well?
+I was able to get a lot of work done and improve/add a lot of things, I am very happy with the improved structure of the entire project, with some parts being mentioned above like the GUI being put in the main file, but also small structural changes inside of the document.
 - What needs improvement?
+My work management does need some improvement, as I am taking a lot of time fixing things, instead of adding things. This could be due to the fact that I started too quick, and made a lot of mistakes which I now have to sit on the nails for. But this shouldn't be a major problem, as when this is fixed the app is practically done, with some things needed to be added. 
 - What did I learn?
+One specific thing I learned in this session was "side = left/right" for buttons or other GUI things like labels and etc. This allows the buttons to be lined up next to eachother, instead of stacked up on eachother which for me will look a lot better. I also decided to put the Exit button on the right side, for seperation and better visual appearanace. 
+
 
 ---
 ## Session [02]

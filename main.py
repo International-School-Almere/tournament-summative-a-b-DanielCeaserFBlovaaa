@@ -158,10 +158,10 @@ def clear_frame(frame):
 
 tk.Label(root, text="Welcome to the Tournament Scoring System", font=("Arial", 20)).pack(pady=20) #this is the title of the app, it will be displayed at the top of the main menu
 
-tk.Button(main_frame, text="Add Participant", command=add_participant).pack(side="left", padx=5)
-tk.Button(main_frame, text="Add Team", command=add_team).pack(side="left", padx=5)
-tk.Button(main_frame, text="Create Event", command=create_event).pack(side="left", padx=5)
-tk.Button(main_frame, text="Enter Results", command=enter_results).pack(side="left", padx=5)
+tk.Button(main_frame, text="Add Participant", command=add_participant_page).pack(side="left", padx=5)
+tk.Button(main_frame, text="Add Team", command=add_team_page).pack(side="left", padx=5)
+tk.Button(main_frame, text="Create Event", command=create_event_page).pack(side="left", padx=5)
+tk.Button(main_frame, text="Enter Results", command=enter_results_page).pack(side="left", padx=5)
 tk.Button(main_frame, text="Exit", command=root.quit).pack(side="right", padx=5)
 
 #Start of the app
