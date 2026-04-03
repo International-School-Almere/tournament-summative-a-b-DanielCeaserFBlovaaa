@@ -21,8 +21,7 @@ In this project I will be designing, devolping and testing a scoring system soft
 
 ## File list.
 
-GUI.py
-tournament_data.json
+
 
 ## (Dependencies) API / library / module list.
 ---
@@ -71,6 +70,136 @@ I learned to seperate the sections and add comments/details to certain lines in 
 ### Solutions / Actions Taken
 - I only used tk.Tk() for the main menu, when I used them for all all pages opened, now only one does. I also added show_main_frame() at the bottom to make sure thats the page that opens when app is started. 
 - I have not yet fixed the button problem, however the "exit" button is working but this problem will be added to #7 below.
+
+### Evidence
+- [Added code]
+- [Updated design]
+- [Created sketch]
+- [Researched source]
+- [Uploaded image/screenshot]
+
+### Reflection
+- What went well?
+- What needs improvement?
+- What did I learn?
+
+---
+## Session [02]
+**Date:** [Add date later]  
+**Time spent:** [e.g. 45 min / 2 hours]  
+**Focus:** [What did you work on?]
+
+### Problems / Challenges
+- 
+- 
+
+### Solutions / Actions Taken
+- 
+- 
+
+### Evidence
+- [Added code]
+- [Updated design]
+- [Created sketch]
+- [Researched source]
+- [Uploaded image/screenshot]
+
+### Reflection
+- What went well?
+- What needs improvement?
+- What did I learn?
+
+---
+## Session [02]
+**Date:** [Add date later]  
+**Time spent:** [e.g. 45 min / 2 hours]  
+**Focus:** [What did you work on?]
+
+### Problems / Challenges
+- 
+- 
+
+### Solutions / Actions Taken
+- 
+- 
+
+### Evidence
+- [Added code]
+- [Updated design]
+- [Created sketch]
+- [Researched source]
+- [Uploaded image/screenshot]
+
+### Reflection
+- What went well?
+- What needs improvement?
+- What did I learn?
+
+---
+## Session [02]
+**Date:** [Add date later]  
+**Time spent:** [e.g. 45 min / 2 hours]  
+**Focus:** [What did you work on?]
+
+### Problems / Challenges
+- 
+- 
+
+### Solutions / Actions Taken
+- 
+- 
+
+### Evidence
+- [Added code]
+- [Updated design]
+- [Created sketch]
+- [Researched source]
+- [Uploaded image/screenshot]
+
+### Reflection
+- What went well?
+- What needs improvement?
+- What did I learn?
+
+---
+## Session [02]
+**Date:** [Add date later]  
+**Time spent:** [e.g. 45 min / 2 hours]  
+**Focus:** [What did you work on?]
+
+### Problems / Challenges
+- 
+- 
+
+### Solutions / Actions Taken
+- 
+- 
+
+### Evidence
+- [Added code]
+- [Updated design]
+- [Created sketch]
+- [Researched source]
+- [Uploaded image/screenshot]
+
+### Reflection
+- What went well?
+- What needs improvement?
+- What did I learn?
+
+---
+## Session [02]
+**Date:** [Add date later]  
+**Time spent:** [e.g. 45 min / 2 hours]  
+**Focus:** [What did you work on?]
+
+### Problems / Challenges
+- 
+- 
+
+### Solutions / Actions Taken
+- 
+- 
 
 ### Evidence
 - [Added code]
