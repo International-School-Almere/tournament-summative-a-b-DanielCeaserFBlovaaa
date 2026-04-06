@@ -111,30 +111,30 @@ One specific thing I learned in this session was "side = left/right" for buttons
 
 
 ---
-## Session [02]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+## Session [04]
+**Date:** [06/04/2026]  
+**Time spent:** [1 Hour]  
+**Focus:** [I worked on the add participant/add team page in this session, my goal was to make both work + save data to JSON file. ]
 
 ### Problems / Challenges
-- 
-- 
+- JSON File data saving
+- Small mistakes made earlier in code
 
 ### Solutions / Actions Taken
-- 
-- 
+- I did not quite do anything specific for the JSON file, it got solved when I was scanning through my code trying to find any mistakes I made, one example of this is mixing main_frame with root, which is also why some buttons did and didn't work, now that that is fixed and everything is main_frame all that is required to work does so.
+
 
 ### Evidence
 - [Added code]
-- [Updated design]
-- [Created sketch]
-- [Researched source]
-- [Uploaded image/screenshot]
+
 
 ### Reflection
 - What went well?
+I was able to get a lot of work done, and finish my tasks that I had set for today, I was able to make the add participant and add team page and data saving work, and I am most proud of my issue scan that I did which allowed me to find and fix some issues that were making my code a lot less structured and some even caused the code to not work how I wanted it to.
 - What needs improvement?
+I will need to work on not making these small mistakes again, especially things like mixing root and main_frame which took very long for me to figure and solve. I will do this by writing these kinds of things down, like if I use a certain function for something, to remember this by writing it down so I can come back to it later.
 - What did I learn?
+I learned that issues in a code can be caused way further back, and that even if something works now, it might cause something else to malfunction later, so if I encounter another problem in the future I shouldn't just look in that section of the code, but also to older parts to find a fix.
 
 ---
 ## Session [02]
@@ -247,7 +247,7 @@ One specific thing I learned in this session was "side = left/right" for buttons
 
 | Problem | Cause | Fix | Status |
 |---|---|---|---|
-| All buttons except for the exit button do not work | [Why it happened] | [What you did] | Open / Fixed |
+| All buttons except for the exit button do not work | The most likely cause of this problem was that main_frame was being mixed with root, this caused for some buttons to be paired to main_frame which was used for the GUI, but also some to root which caused those not to work. | I put everything under main_frame, which was a simple but confusing fix, and required me to scan through my entire code and find all that are linked to root. | FIXED|
 | [Describe issue] | [Why it happened] | [What you did] | Open / Fixed |
 
 ---
