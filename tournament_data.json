@@ -1,28 +1,19 @@
 {
-    "participants": {
-        "Participant Name": {},
-        "Age": 0,
-        "Participant ID": []
-        
-    },
-    "teams": {
-        "Team Name": {},
-        "Names of members": [],
-        "Team ID": []
-        
-    },
-
-    "events": {
-        "Event Name": {},
-        "Event Type": {},
-        "Event Category": {},
-        "Event ID": {}
-        },
-    
-
-    "results": {
-        "Event Name": {},
-        "Participant/Team Name": {},
-        "Position": {}
-    }
+    "participants": [
+        {
+            "name": "Test",
+            "age": "18",
+            "ID": 437
+        }
+    ],
+    "teams": [
+        {
+            "teamname": "Test team",
+            "contactperson": "Test",
+            "contactdetails": "testemail@gmail.com",
+            "teamID": 1989
+        }
+    ],
+    "events": [],
+    "results": []
 }
