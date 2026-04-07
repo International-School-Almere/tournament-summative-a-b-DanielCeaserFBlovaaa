@@ -10,15 +10,43 @@ teams_list = []
 events_list = []
 results_list = []
 
+point_system = {
+    1: 10,
+    2: 8,
+    3: 6,
+    4: 4,
+    5: 2
+}
+
+
 # ---------- JSON ----------
 def save_data():
+    with open("tournament_data.json", "r") as f:
+        data = json.load(f)
+    data["participants"] = participants_list
+    data["teams"] = teams_list
+    data["events"] = events_list
+    data["results"] = results_list
     with open("tournament_data.json", "w") as f:
-        json.dump({
-            "participants": participants_list,
-            "teams": teams_list,
-            "events": events_list,
-            "results": results_list
-        }, f, indent=4)
+        json.dump(data, f, indent=4)
+
+def load_data():
+    global participants_list, teams_list, events_list, results_list
+    try:
+        with open("tournament_data.json", "r") as f:
+            data = json.load(f)
+            participants_list = data.get("participants", [])
+            teams_list = data.get("teams", [])
+            events_list = data.get("events", [])
+            results_list = data.get("results", [])
+    except FileNotFoundError:
+        with open("tournament_data.json", "w") as f:
+            json.dump({
+                "participants": [],
+                "teams": [],
+                "events": [],
+                "results": []
+            }, f, indent=4)
 
 #-------------------------------------------#
 #Functions for participants, teams, events, and results and home page
@@ -194,12 +222,86 @@ def add_team_page():
 #Create Event page
 def create_event_page():
     clear_frame(main_frame)
-    open
+    tk.Label(main_frame, text="Create an Event", font=("Arial", 20)).pack(pady=20)
+    tk.Label(main_frame, text="Please remember your event ID, as you will need it for more.").pack(pady=5)
+
+    entry_name = tk.Entry(main_frame)
+    entry_name.pack(pady=10)
+    entry_name.insert(0, "Enter the event name")
+    entry_name.bind("<FocusIn>", onclick) 
+
+    entry_type = tk.Entry(main_frame)
+    entry_type.pack()
+    entry_type.pack(pady=10)
+    entry_type.insert(0, "Is the event individual or team-based?")
+    entry_type.bind("<FocusIn>", onclick)
+
+    entry_category = tk.Entry(main_frame)
+    entry_category.pack()
+    entry_category.pack(pady=10)
+    entry_category.insert(0, "Is the event based on a sport or academic competition? (Sport/Academic)")
+    entry_category.bind("<FocusIn>", onclick)
+
+    result_laber = tk.Label(main_frame, text="")
+    result_laber.pack(pady=5)
+
+    def submit():
+        eid=event_ID()
+        
+
+        events_list.append({
+            'name': entry_name.get(),
+            'type': entry_type.get(),
+            'category': entry_category.get(),
+            'ID': eid})
+        save_data() #this will save the data to the JSON file after an event is added
+        tk.Label(main_frame, text=f"Your event ID is: {eid}, you have successfully created the event!").pack(pady=5) 
+        tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=5)
+    
+    submit_button = tk.Button(main_frame, text="Submit", command=submit)
+    submit_button.pack(pady=5)
 
 #Enter Results page
 def enter_results_page():
     clear_frame(main_frame)
-    open
+    tk.Label(main_frame, text="Enter Results", font=("Arial", 20)).pack(pady=20)
+    tk.Label(main_frame, text="Please enter the event name, the name of the participant/team, and their final position (1-5).").pack(pady=5)
+    
+    enter_results_frame = tk.Frame(main_frame)
+    enter_results_frame.pack(pady=10)
+    entry_event = tk.Entry(enter_results_frame)
+    entry_event.pack(pady=5)
+    entry_event.insert(0, "Enter the event name")
+    entry_event.bind("<FocusIn>", onclick)
+    
+    entry_participant = tk.Entry(enter_results_frame)
+    entry_participant.pack(pady=5)
+    entry_participant.insert(0, "Enter the name of the participant/team")
+    entry_participant.bind("<FocusIn>", onclick)
+    
+    entry_position = tk.Entry(enter_results_frame)
+    entry_position.pack(pady=5)
+    entry_position.insert(0, "Enter the final position (1-5)")
+    entry_position.bind("<FocusIn>", onclick)
+
+    result_laber = tk.Label(main_frame, text="")
+    result_laber.pack(pady=5)
+
+    def submit():
+        results_list.append({
+            'event': entry_event.get(),
+            'participant': entry_participant.get(),
+            'position': int(entry_position.get()),
+            'points': point_system.get(int(entry_position.get()), 0)}) #this will add the points to the results list based on the position of the participant/team, if the position is not between 1 and 5, it will default to 0 points
+        save_data() 
+
+        tk.Label(main_frame, text=f"Results for {entry_participant.get()} in {entry_event.get()} have been successfully entered!").pack(pady=5)
+        tk.Label(main_frame, text=f"{entry_participant.get()} has been awarded {point_system.get(int(entry_position.get()), 0)} points for their position.").pack(pady=5)
+        tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=5)
+    submit_button = tk.Button(main_frame, text="Submit", command=submit)
+    submit_button.pack(pady=5)
+
+
 
 
 #Clear Function
@@ -212,6 +314,7 @@ def clear_frame(frame):
 #------------------------------#
 #Menu Buttons 
 
+load_data() #this will load the data from the JSON file when the app is started, this ensures that the data is not lost when the app is closed 
 show_home()  # home page start 
 
 root.mainloop() 

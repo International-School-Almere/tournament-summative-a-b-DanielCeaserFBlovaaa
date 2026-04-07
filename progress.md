@@ -21,6 +21,7 @@ In this project I will be designing, devolping and testing a scoring system soft
 
 ## File list.
 
+tournament_data.json
 
 
 ## (Dependencies) API / library / module list.
@@ -137,30 +138,32 @@ I will need to work on not making these small mistakes again, especially things 
 I learned that issues in a code can be caused way further back, and that even if something works now, it might cause something else to malfunction later, so if I encounter another problem in the future I shouldn't just look in that section of the code, but also to older parts to find a fix.
 
 ---
-## Session [02]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+## Session [05]
+**Date:** [07/04/2026]  
+**Time spent:** [1 Hour]  
+**Focus:** [I worked on making the final pages work, so adding an event, and entering results. I also fixed a problem with my saving in JSON, as it only saved for one session and when I opened to app again then the old data would be removed. ]
 
 ### Problems / Challenges
-- 
-- 
+- Data resets in JSON File
+
 
 ### Solutions / Actions Taken
-- 
-- 
+- To fix this, I had to make some changes in my save_data function, as the JSON file would be opened as write, which means it will rewrite the data that is already in there and therefore remove it. I changed this to read, and added a load_data function which has now solved this problem and made the saving work.
+
 
 ### Evidence
 - [Added code]
-- [Updated design]
-- [Created sketch]
-- [Researched source]
-- [Uploaded image/screenshot]
+
 
 ### Reflection
 - What went well?
+I was able to do a lot of work, and fix some older issues + make the app almost finished. I am most proud of my problem-solving skills used, where I was able to identify the saving problem and fix this using old code I made myself to try and identify a fix.
+
 - What needs improvement?
+I asked my teacher for some structural feedback, asking him about my structure of the code which he said was not optimal, as the most optimal layout is different than what I am doing right now. I will fix this later, as now I am trying to finish the code and worry about the structure later which might not be the smartest but works best for me.
+
 - What did I learn?
+I learned about the layout of an program, which will help me with my structure and keeping my code organized. 
 
 ---
 ## Session [02]
@@ -247,7 +250,9 @@ I learned that issues in a code can be caused way further back, and that even if
 
 | Problem | Cause | Fix | Status |
 |---|---|---|---|
+
 | All buttons except for the exit button do not work | The most likely cause of this problem was that main_frame was being mixed with root, this caused for some buttons to be paired to main_frame which was used for the GUI, but also some to root which caused those not to work. | I put everything under main_frame, which was a simple but confusing fix, and required me to scan through my entire code and find all that are linked to root. | FIXED|
+
 | [Describe issue] | [Why it happened] | [What you did] | Open / Fixed |
 
 ---

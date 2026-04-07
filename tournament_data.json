@@ -1,19 +1,36 @@
 {
     "participants": [
         {
-            "name": "Test",
+            "name": "Bram",
             "age": "18",
-            "ID": 437
-        }
-    ],
-    "teams": [
+            "ID": 962
+        },
         {
-            "teamname": "Test team",
-            "contactperson": "Test",
-            "contactdetails": "testemail@gmail.com",
-            "teamID": 1989
+            "name": "TestPerson",
+            "age": "19",
+            "ID": 278
         }
     ],
+    "teams": [],
     "events": [],
-    "results": []
+    "results": [
+        {
+            "event": "TestEvent",
+            "participant": "Bram",
+            "position": 1,
+            "points": 10
+        },
+        {
+            "event": "TestEvent",
+            "participant": "TestPerson",
+            "position": 2,
+            "points": 8
+        },
+        {
+            "event": "TestEvent",
+            "participant": "TestTeam",
+            "position": 3,
+            "points": 6
+        }
+    ]
 }
