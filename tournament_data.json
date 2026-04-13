@@ -12,7 +12,14 @@
         }
     ],
     "teams": [],
-    "events": [],
+    "events": [
+        {
+            "name": "RESULTTEST",
+            "type": "Team",
+            "category": "Sport",
+            "ID": 2074
+        }
+    ],
     "results": [
         {
             "event": "TestEvent",
@@ -31,6 +38,18 @@
             "participant": "TestTeam",
             "position": 3,
             "points": 6
+        },
+        {
+            "event": "Select Event",
+            "participant": "TestPerson",
+            "position": 5,
+            "points": 2
+        },
+        {
+            "event": "RESULTTEST",
+            "participant": "Bram",
+            "position": 5,
+            "points": 2
         }
     ]
 }

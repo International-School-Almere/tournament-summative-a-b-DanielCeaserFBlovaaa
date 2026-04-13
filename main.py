@@ -2,6 +2,7 @@
 import json         #for saving data in a JSON file
 import random       #for user/team/event ID creation
 import tkinter as tk
+from tkinter import ttk 
 
 #Global Variables:
 
@@ -59,6 +60,7 @@ def show_home():
     tk.Button(main_frame, text="Add Team", command=add_team_page).pack(side="left", padx=5)
     tk.Button(main_frame, text="Create Event", command=create_event_page).pack(side="left", padx=5)
     tk.Button(main_frame, text="Enter Results", command=enter_results_page).pack(side="left", padx=5)
+    tk.Button(main_frame, text="Leaderboard", command=show_leaderboard).pack(side="left", padx=5)
     tk.Button(main_frame, text="Exit", command=root.quit).pack(side="right", padx=5)
 
 
@@ -269,16 +271,21 @@ def enter_results_page():
     
     enter_results_frame = tk.Frame(main_frame)
     enter_results_frame.pack(pady=10)
-    entry_event = tk.Entry(enter_results_frame)
-    entry_event.pack(pady=5)
-    entry_event.insert(0, "Enter the event name")
-    entry_event.bind("<FocusIn>", onclick)
+
+    event_names = [e["name"] for e in events_list] #This will display the names of the events in a dropdown menu from the events list, this is used to ensure that the user enters a valid event name and to make it easier for the user to enter the results, as they can simply select the event from the dropdown menu instead of having to type it out
+    event_dropdown = ttk.Combobox(enter_results_frame, values=event_names)
+    event_dropdown.pack(pady=5)
+    event_dropdown.set("Select Event")
     
-    entry_participant = tk.Entry(enter_results_frame)
-    entry_participant.pack(pady=5)
-    entry_participant.insert(0, "Enter the name of the participant/team")
-    entry_participant.bind("<FocusIn>", onclick)
-    
+
+    participant_names = [p["name"] for p in participants_list]
+    team_names = [t["teamname"] for t in teams_list]
+    all_names = participant_names + team_names
+    participant_dropdown = ttk.Combobox(enter_results_frame, values=all_names)
+    participant_dropdown.pack(pady=5)
+    participant_dropdown.set("Select Participant/Team")
+    participant_dropdown.bind("<FocusIn>", onclick)
+
     entry_position = tk.Entry(enter_results_frame)
     entry_position.pack(pady=5)
     entry_position.insert(0, "Enter the final position (1-5)")
@@ -289,18 +296,35 @@ def enter_results_page():
 
     def submit():
         results_list.append({
-            'event': entry_event.get(),
-            'participant': entry_participant.get(),
+            'event': event_dropdown.get(),
+            'participant': participant_dropdown.get(),
             'position': int(entry_position.get()),
             'points': point_system.get(int(entry_position.get()), 0)}) #this will add the points to the results list based on the position of the participant/team, if the position is not between 1 and 5, it will default to 0 points
         save_data() 
 
-        tk.Label(main_frame, text=f"Results for {entry_participant.get()} in {entry_event.get()} have been successfully entered!").pack(pady=5)
-        tk.Label(main_frame, text=f"{entry_participant.get()} has been awarded {point_system.get(int(entry_position.get()), 0)} points for their position.").pack(pady=5)
+        tk.Label(main_frame, text=f"Results for {participant_dropdown.get()} in {event_dropdown.get()} have been successfully entered!").pack(pady=5)
+        tk.Label(main_frame, text=f"{participant_dropdown.get()} has been awarded {point_system.get(int(entry_position.get()), 0)} points for their position.").pack(pady=5)
         tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=5)
     submit_button = tk.Button(main_frame, text="Submit", command=submit)
     submit_button.pack(pady=5)
 
+def show_leaderboard():
+    clear_frame(main_frame)
+    tk.Label(main_frame, text="Leaderboard", font=("Arial", 20)).pack(pady=20)
+
+    leaderboard = {}
+    for result in results_list:
+        participant = result['participant']
+        points = result['points']
+        leaderboard[participant] = leaderboard.get(participant, 0) + points
+
+    sorted_leaderboard = sorted(leaderboard.items(), key=lambda x: x[1], reverse=True) #this will sort the leaderboard based on the points, with the participant/team with the most points at the top where key=lambda x: x[1] means that the sorting will be based on the second item in the tuple (the points) and reverse=True means that it will be sorted in descending order
+
+    for i, (name, pts) in enumerate(sorted_leaderboard, start=1):
+        tk.Label(main_frame, text=f"{i}. {name} - {pts} pts").pack(anchor="w")
+
+
+    tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=20)
 
 
 

@@ -166,30 +166,32 @@ I asked my teacher for some structural feedback, asking him about my structure o
 I learned about the layout of an program, which will help me with my structure and keeping my code organized. 
 
 ---
-## Session [02]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+## Session [06]
+**Date:** [13/04/2026]  
+**Time spent:** [75 Minutes]  
+**Focus:** [In this session my main focus was making the leaderboard work, and adding drop-down menus when entering results to link it to a specific participant/team and event so it doesn't just duplicate in the leaderboard. ]
 
 ### Problems / Challenges
-- 
-- 
+- Adding rank numbers to leaderboard (1. bram, 2. Testperson etc.)
+
 
 ### Solutions / Actions Taken
-- 
-- 
+- To solve this, I added "enumerate" with the required code to it, this now allows me to have the rankings be in order of highest points first, with the fitting number to it.
+
 
 ### Evidence
 - [Added code]
-- [Updated design]
-- [Created sketch]
-- [Researched source]
-- [Uploaded image/screenshot]
+
 
 ### Reflection
 - What went well?
+I was able to finish the leaderboard and now will start finalizing the code, and adding the final details to it. This went pretty well as I planned it would take multiple sessions to get it fully up and running but took a lot shorter than expected. The drop-down menu feature was also a lot easier than expected, it kind of just worked immidiatly without too much hassle except for finding the correct names for some of the things.
+
 - What needs improvement?
+I need to make sure the participants and teams are seperated on the leaderboard, not quite sure yet how I will do this but that is for the next session. Doing this will make the app even more user-friendly + now teams/participants will not be able to see their real rank among their group (either other participants or other teams)
+
 - What did I learn?
+My main learning point for this session was definetly learning about "enumerate" which helps my program a lot and will be used for different programs in the future as well.
 
 ---
 ## Session [02]
