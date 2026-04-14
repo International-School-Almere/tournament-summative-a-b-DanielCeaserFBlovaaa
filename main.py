@@ -20,7 +20,7 @@ point_system = {
 }
 
 
-# ---------- JSON ----------
+# ---------- JSON ----------#
 def save_data():
     with open("tournament_data.json", "r") as f:
         data = json.load(f)

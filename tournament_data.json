@@ -9,15 +9,51 @@
             "name": "TestPerson",
             "age": "19",
             "ID": 278
+        },
+        {
+            "name": "TESTINGPHASE",
+            "age": "20",
+            "ID": 546
         }
     ],
-    "teams": [],
+    "teams": [
+        {
+            "teamname": "TESTTEAM1",
+            "contactperson": "TESTCONTACT1",
+            "contactdetails": "TESTEMAIL1@EXAMPLE.COM",
+            "teamID": 1214
+        },
+        {
+            "teamname": "TESTTEAM2",
+            "contactperson": "TESTCONTACT2",
+            "contactdetails": "TESTEMAIL2@EXAMPLE.COM",
+            "teamID": 1128
+        },
+        {
+            "teamname": "TESTTEAM3",
+            "contactperson": "TESTCONTACT3",
+            "contactdetails": "TESTEMAIL3@EXAMPLE.COM",
+            "teamID": 1570
+        }
+    ],
     "events": [
         {
             "name": "RESULTTEST",
             "type": "Team",
             "category": "Sport",
             "ID": 2074
+        },
+        {
+            "name": "TESTEVENT2",
+            "type": "Team",
+            "category": "Sport",
+            "ID": 2822
+        },
+        {
+            "name": "TESTEVENT3",
+            "type": "Individual",
+            "category": "Academic",
+            "ID": 2239
         }
     ],
     "results": [
@@ -50,6 +86,12 @@
             "participant": "Bram",
             "position": 5,
             "points": 2
+        },
+        {
+            "event": "RESULTTEST",
+            "participant": "Bram",
+            "position": 3,
+            "points": 6
         }
     ]
 }

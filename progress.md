@@ -11,13 +11,13 @@
 Tournament Scoring System Bram van Exel
 
 ## Project Description
-In this project I will be designing, devolping and testing a scoring system software for a tournament.
+In this project I will be designing, devoloping and testing a scoring system software for a tournament.
 
 ## Start Date
-[Unknown / add later]
+[30/03/2026]
 
 ## Target End Date
-[Unknown / add later]
+[18/04/2026]
 
 ## File list.
 
