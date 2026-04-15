@@ -145,6 +145,7 @@ def onclick(removal):
 def add_participant_page():
     clear_frame(main_frame)
     tk.Label(main_frame, text="Add a Participant", font=("Arial", 20)).pack(pady=20)
+    add_home_button()
     tk.Label(main_frame, text="Please remember your participant ID, as you will need it for more.").pack(pady=5)
    
     entry_name = tk.Entry(main_frame)
@@ -162,6 +163,10 @@ def add_participant_page():
     result_laber.pack(pady=5)
 
     def submit():
+        if len(participants_list) >= 20:
+            tk.Label(main_frame, text="Maximum number of participants reached (20).").pack(pady=5) #This will not allow more than 20 participants to enter the tournament
+            return
+
         pid=participant_ID()
         
 
@@ -181,6 +186,7 @@ def add_participant_page():
 def add_team_page():
     clear_frame(main_frame)
     tk.Label(main_frame, text="Add a Team", font=("Arial", 20)).pack(pady=20)
+    add_home_button()
     tk.Label(main_frame, text="Please remember your team ID, as you will need it for more.").pack(pady=5)
 
     entry_name = tk.Entry(main_frame)
@@ -204,6 +210,10 @@ def add_team_page():
     result_laber.pack(pady=5)
 
     def submit():
+        if len(teams_list) >= 4:
+            tk.Label(main_frame, text="Maximum number of teams reached (4).").pack(pady=5)
+            return
+        
         tid=team_ID()
         
 
@@ -225,6 +235,7 @@ def add_team_page():
 def create_event_page():
     clear_frame(main_frame)
     tk.Label(main_frame, text="Create an Event", font=("Arial", 20)).pack(pady=20)
+    add_home_button()
     tk.Label(main_frame, text="Please remember your event ID, as you will need it for more.").pack(pady=5)
 
     entry_name = tk.Entry(main_frame)
@@ -267,6 +278,7 @@ def create_event_page():
 def enter_results_page():
     clear_frame(main_frame)
     tk.Label(main_frame, text="Enter Results", font=("Arial", 20)).pack(pady=20)
+    add_home_button()
     tk.Label(main_frame, text="Please enter the event name, the name of the participant/team, and their final position (1-5).").pack(pady=5)
     
     enter_results_frame = tk.Frame(main_frame)
@@ -305,12 +317,14 @@ def enter_results_page():
         tk.Label(main_frame, text=f"Results for {participant_dropdown.get()} in {event_dropdown.get()} have been successfully entered!").pack(pady=5)
         tk.Label(main_frame, text=f"{participant_dropdown.get()} has been awarded {point_system.get(int(entry_position.get()), 0)} points for their position.").pack(pady=5)
         tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=5)
-    submit_button = tk.Button(main_frame, text="Submit", command=submit)
-    submit_button.pack(pady=5)
+        submit_button = tk.Button(main_frame, text="Submit", command=submit)
+        submit_button.pack(pady=5)
 
+#Leaderboard page
 def show_leaderboard():
     clear_frame(main_frame)
     tk.Label(main_frame, text="Leaderboard", font=("Arial", 20)).pack(pady=20)
+    add_home_button()
 
     leaderboard = {}
     for result in results_list:
@@ -326,7 +340,9 @@ def show_leaderboard():
 
     tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=20)
 
-
+#Return to Home button on each page without having to submit first
+def add_home_button():
+    tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=10)
 
 #Clear Function
 def clear_frame(frame):

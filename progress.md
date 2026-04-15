@@ -194,30 +194,32 @@ I need to make sure the participants and teams are seperated on the leaderboard,
 My main learning point for this session was definetly learning about "enumerate" which helps my program a lot and will be used for different programs in the future as well.
 
 ---
-## Session [02]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+## Session [07]
+**Date:** [15/04/2026]  
+**Time spent:** [30 Minutes]  
+**Focus:** [Adding a maximum amount of allowed participants/teams and test plan improvement; adding "return to home" button on each page, without requiring the user to submit work.]
 
 ### Problems / Challenges
-- 
-- 
+- One challenge was to find the easiest and most organized way of adding the button for myself (the developer)
+
 
 ### Solutions / Actions Taken
-- 
-- 
+- I created a new function: add_home_button() in which I put the code, then I was able to just add that function in all the other page functions (add_participant(), add_team(), etc.) which was very easy and structured for me to do.
+
 
 ### Evidence
 - [Added code]
-- [Updated design]
-- [Created sketch]
-- [Researched source]
-- [Uploaded image/screenshot]
+
 
 ### Reflection
 - What went well?
+I was able to find the method of adding the button, in the easiest and most structured way fairly quickly, as well as that it worked on first try and didn't require any other changes to the code to be made. In this session I was also able to add a maximum number of participants and teams in the program, which further improves the user experience and the ease-of-use. This went fairly easy as I just looked at past code in which I had to do a similar thing, and used that code in this program as well. 
+
 - What needs improvement?
+From this session I don't believe anything specificly needs improvement.
+
 - What did I learn?
+Adding the function in each page function allowed me to fix and improve my code very quick, which is definetly a learning point for adding global buttons like that. 
 
 ---
 ## Session [02]
