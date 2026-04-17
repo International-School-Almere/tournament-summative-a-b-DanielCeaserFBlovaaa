@@ -222,33 +222,61 @@ From this session I don't believe anything specificly needs improvement.
 Adding the function in each page function allowed me to fix and improve my code very quick, which is definetly a learning point for adding global buttons like that. 
 
 ---
-## Session [02]
-**Date:** [Add date later]  
-**Time spent:** [e.g. 45 min / 2 hours]  
-**Focus:** [What did you work on?]
+## Session [08]
+**Date:** [16/04/2026]  
+**Time spent:** [2 Hours]  
+**Focus:** [In this session main focus was to seperate the leaderboard into a team leaderboard and participant leaderboard, which was one of the main problems my program was having]
 
 ### Problems / Challenges
-- 
-- 
+- I tried creating seperate pages for participants and teams to have their own leaderboard, however this didn't quite go as planned and got me stuck in a loop of issues and eventually got to the point that for me it became unreadable and looked unfixable
+
 
 ### Solutions / Actions Taken
-- 
-- 
+- I went back to the 10th Commit, took the code from there and restored the program back to that version. This does mean I am a little less far than I planned on being but it's better than the state I was in with the leaderboard.
+
 
 ### Evidence
-- [Added code]
-- [Updated design]
-- [Created sketch]
-- [Researched source]
-- [Uploaded image/screenshot]
+- No evidence required
+
 
 ### Reflection
 - What went well?
+All was restored to old version
+
 - What needs improvement?
+
+
 - What did I learn?
 
----
 
+---
+## Session [09]
+**Date:** [17/04/2026]  
+**Time spent:** [45 Minutes]  
+**Focus:** [In this session main focus was to seperate the leaderboard into a team leaderboard and participant leaderboard, which was one of the main problems my program was having and continued on from the session yesterday. I also managed to stop duplicate particiapant and teams to be added. ]
+
+### Problems / Challenges
+- It was a challenge to figure out how to make sure they are not mixed in one leaderboard, but slowly and steadily figured out how to do it throughout this session.
+
+
+### Solutions / Actions Taken
+- I looked at ways in which I could check if the name is either in a participant or teams list, which I then found out how to do it from old code I wrote from which I got the code that helped me a lot. For the duplicate checking, it was also taken from an old code, which I was able to use very quickly.
+
+### Evidence
+- [Added code]
+
+
+### Reflection
+- What went well?
+I am very happy with my ability of not giving up on this leaderboard problem, and restarting from before my session tomorrow to make sure I stay organized and understand the code. Today, I was able to find a fix for both focuses in this session from old code, which made it a lot quicker and easier to fix it. 
+
+- What needs improvement?
+This all stammed from old laziness/issues in my code from where I didn't initially "finish" the full function, which came back to me now and I had to go back to that part of the code and find fixes, which would be easier to do in the session that I created the leaderboard.
+
+- What did I learn?
+In the future, I will rely more on my old codes to find fixes instead of having to go over my code myself. This will save me a lot of time and effort and make it a lot easier to fix problems or find new features that I can add into a program.
+
+---
 
 # 7. Problems and Fixes
 
@@ -257,7 +285,7 @@ Adding the function in each page function allowed me to fix and improve my code 
 
 | All buttons except for the exit button do not work | The most likely cause of this problem was that main_frame was being mixed with root, this caused for some buttons to be paired to main_frame which was used for the GUI, but also some to root which caused those not to work. | I put everything under main_frame, which was a simple but confusing fix, and required me to scan through my entire code and find all that are linked to root. | FIXED|
 
-| [Describe issue] | [Why it happened] | [What you did] | Open / Fixed |
+| [Leaderboard Issues] | [Why it happened] | [What you did] | Open / Fixed |
 
 ---
 

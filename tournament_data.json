@@ -6,11 +6,6 @@
             "ID": 962
         },
         {
-            "name": "TestPerson",
-            "age": "19",
-            "ID": 278
-        },
-        {
             "name": "TESTINGPHASE",
             "age": "20",
             "ID": 546
@@ -184,5 +179,9 @@
             "position": 3,
             "points": 6
         }
+    ],
+    "EventTypes": [
+            "Individual",
+            "Team"  
     ]
 }

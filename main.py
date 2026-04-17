@@ -1,5 +1,6 @@
 #main file for the Tournament App.
 import json         #for saving data in a JSON file
+from os import name
 import random       #for user/team/event ID creation
 import tkinter as tk
 from tkinter import ttk 
@@ -109,6 +110,8 @@ def enter_results():
         'participant': participant_name, 
         'position': position})
     save_data() 
+
+
     
 def participant_ID():
     return random.randint(1, 999)
@@ -118,7 +121,6 @@ def team_ID():
 
 def event_ID():
     return random.randint(2000, 2999)
-
 
 
 #--------------------------------------------#
@@ -163,18 +165,32 @@ def add_participant_page():
     result_laber.pack(pady=5)
 
     def submit():
+        name = entry_name.get().strip()
+
+        if name == "":
+            tk.Label(main_frame, text="Name cannot be empty.").pack(pady=5)
+            return
+        
+        if any(p['name'].lower() == name.lower() for p in participants_list):
+            tk.Label(main_frame, text="Participant already exists.").pack(pady=5)
+            return
+
         if len(participants_list) >= 20:
             tk.Label(main_frame, text="Maximum number of participants reached (20).").pack(pady=5) #This will not allow more than 20 participants to enter the tournament
             return
-
-        pid=participant_ID()
         
+        pid=participant_ID()
 
         participants_list.append({
             'name': entry_name.get(),
             'age': entry_age.get(),
-            'ID': pid})
+            'ID': pid
+        })
+
         save_data() #this will save the data to the JSON file after a participant is added
+        entry_name.delete(0, tk.END)
+        entry_age.delete(0, tk.END)
+
         tk.Label(main_frame, text=f"Your participant ID is: {pid}, you have successfully entered the tournament!").pack(pady=5) #this will show the user their participant ID after they have clicked submit, this is important as they will need it for more
         tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=5) #this will return the user to the home page after they have added a participant
 
@@ -210,6 +226,14 @@ def add_team_page():
     result_laber.pack(pady=5)
 
     def submit():
+        if name == "":
+            tk.Label(main_frame, text="Name cannot be empty.").pack(pady=5)
+            return
+        name = entry_name.get().strip()
+        if any(t['teamname'].lower() == name.lower() for t in teams_list):
+            tk.Label(main_frame, text="Team already exists.").pack(pady=5)
+            return
+        
         if len(teams_list) >= 4:
             tk.Label(main_frame, text="Maximum number of teams reached (4).").pack(pady=5)
             return
@@ -259,6 +283,9 @@ def create_event_page():
     result_laber.pack(pady=5)
 
     def submit():
+        if name == "":
+            tk.Label(main_frame, text="Name cannot be empty.").pack(pady=5)
+            return
         eid=event_ID()
         
 
@@ -307,6 +334,9 @@ def enter_results_page():
     result_laber.pack(pady=5)
 
     def submit():
+        if name == "":
+            tk.Label(main_frame, text="Name cannot be empty.").pack(pady=5)
+            return
         results_list.append({
             'event': event_dropdown.get(),
             'participant': participant_dropdown.get(),
@@ -317,8 +347,8 @@ def enter_results_page():
         tk.Label(main_frame, text=f"Results for {participant_dropdown.get()} in {event_dropdown.get()} have been successfully entered!").pack(pady=5)
         tk.Label(main_frame, text=f"{participant_dropdown.get()} has been awarded {point_system.get(int(entry_position.get()), 0)} points for their position.").pack(pady=5)
         tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=5)
-        submit_button = tk.Button(main_frame, text="Submit", command=submit)
-        submit_button.pack(pady=5)
+    submit_button = tk.Button(main_frame, text="Submit", command=submit)
+    submit_button.pack(pady=5)
 
 #Leaderboard page
 def show_leaderboard():
@@ -326,19 +356,38 @@ def show_leaderboard():
     tk.Label(main_frame, text="Leaderboard", font=("Arial", 20)).pack(pady=20)
     add_home_button()
 
-    leaderboard = {}
+    participant_leaderboard = {}
+    team_leaderboard = {}
+
     for result in results_list:
-        participant = result['participant']
+        name = result['participant']
         points = result['points']
-        leaderboard[participant] = leaderboard.get(participant, 0) + points
 
-    sorted_leaderboard = sorted(leaderboard.items(), key=lambda x: x[1], reverse=True) #this will sort the leaderboard based on the points, with the participant/team with the most points at the top where key=lambda x: x[1] means that the sorting will be based on the second item in the tuple (the points) and reverse=True means that it will be sorted in descending order
+        # Checks if its a participant
+        for p in participants_list:
+            if p['name'] == name:
+                participant_leaderboard[name] = participant_leaderboard.get(name, 0) + points
 
-    for i, (name, pts) in enumerate(sorted_leaderboard, start=1):
+        # Check if its a team
+        for t in teams_list:
+            if t['teamname'] == name:
+                team_leaderboard[name] = team_leaderboard.get(name, 0) + points
+
+
+    tk.Label(main_frame, text="Participants", font=("Arial", 16)).pack(pady=10)
+
+    sorted_participants = sorted(participant_leaderboard.items(), key=lambda x: x[1], reverse=True)
+
+    for i, (name, pts) in enumerate(sorted_participants, start=1):
         tk.Label(main_frame, text=f"{i}. {name} - {pts} pts").pack(anchor="w")
 
 
-    tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=20)
+    tk.Label(main_frame, text="Teams", font=("Arial", 16)).pack(pady=10)
+
+    sorted_teams = sorted(team_leaderboard.items(), key=lambda x: x[1], reverse=True)
+
+    for i, (name, pts) in enumerate(sorted_teams, start=1):
+        tk.Label(main_frame, text=f"{i}. {name} - {pts} pts").pack(anchor="w")
 
 #Return to Home button on each page without having to submit first
 def add_home_button():
