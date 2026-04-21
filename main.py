@@ -1,6 +1,6 @@
 #main file for the Tournament App.
 import json         #for saving data in a JSON file
-from os import name
+from os import name 
 import random       #for user/team/event ID creation
 import tkinter as tk
 from tkinter import ttk 
@@ -138,9 +138,10 @@ tk.Label(main_frame, text="Tournament System", font=("Arial", 20)).pack(pady=20)
     
     
 #Functions 
-def onclick(removal):
-    removal.delete(0, tk.END) #this will clear the entry box when the user clicks on it, for better structure and a more professional app
-    return True #this will return to the show_add_participant_page function, which will then use the add_participant function, this is used to ensure that the participant is added after the user has entered their details and clicked submit
+def onclick(event):
+    event.delete(0, tk.END) 
+    event.widget.delete(0, tk.END) #this will clear the entry box when the user clicks on it, for better structure and a more professional app
+    
   
 
 #Add Participant page
@@ -166,9 +167,14 @@ def add_participant_page():
 
     def submit():
         name = entry_name.get().strip()
-
+        age = entry_age.get().strip()
+        
         if name == "":
             tk.Label(main_frame, text="Name cannot be empty.").pack(pady=5)
+            return
+        
+        if age == "":
+            tk.Label(main_frame, text="Age cannot be empty.").pack(pady=5)
             return
         
         if any(p['name'].lower() == name.lower() for p in participants_list):
@@ -226,9 +232,23 @@ def add_team_page():
     result_laber.pack(pady=5)
 
     def submit():
+        
+        contactdetails = entry_contactdetails.get().strip()
+        contactperson = entry_contactperson.get().strip()
+        name = entry_name.get().strip()
+        
         if name == "":
             tk.Label(main_frame, text="Name cannot be empty.").pack(pady=5)
             return
+        
+        if contactdetails == "":
+            tk.Label(main_frame, text="Contact details cannot be empty.").pack(pady=5)
+            return
+        
+        if contactperson == "":
+            tk.Label(main_frame, text="Contact person cannot be empty.").pack(pady=5)
+            return
+
         name = entry_name.get().strip()
         if any(t['teamname'].lower() == name.lower() for t in teams_list):
             tk.Label(main_frame, text="Team already exists.").pack(pady=5)
@@ -283,9 +303,24 @@ def create_event_page():
     result_laber.pack(pady=5)
 
     def submit():
+
+        name = entry_name.get().strip()
+        type = entry_type.get().strip()
+        category = entry_category.get().strip()
+
+
         if name == "":
             tk.Label(main_frame, text="Name cannot be empty.").pack(pady=5)
             return
+        
+        if type == "":
+            tk.Label(main_frame, text="Type cannot be empty.").pack(pady=5)
+            return
+        
+        if category == "":
+            tk.Label(main_frame, text="Category cannot be empty.").pack(pady=5)
+            return
+        
         eid=event_ID()
         
 
@@ -312,7 +347,7 @@ def enter_results_page():
     enter_results_frame.pack(pady=10)
 
     event_names = [e["name"] for e in events_list] #This will display the names of the events in a dropdown menu from the events list, this is used to ensure that the user enters a valid event name and to make it easier for the user to enter the results, as they can simply select the event from the dropdown menu instead of having to type it out
-    event_dropdown = ttk.Combobox(enter_results_frame, values=event_names)
+    event_dropdown = ttk.Combobox(enter_results_frame, values=event_names, state="readonly")
     event_dropdown.pack(pady=5)
     event_dropdown.set("Select Event")
     
@@ -320,7 +355,7 @@ def enter_results_page():
     participant_names = [p["name"] for p in participants_list]
     team_names = [t["teamname"] for t in teams_list]
     all_names = participant_names + team_names
-    participant_dropdown = ttk.Combobox(enter_results_frame, values=all_names)
+    participant_dropdown = ttk.Combobox(enter_results_frame, values=all_names, state="readonly")
     participant_dropdown.pack(pady=5)
     participant_dropdown.set("Select Participant/Team")
     participant_dropdown.bind("<FocusIn>", onclick)
@@ -334,9 +369,23 @@ def enter_results_page():
     result_laber.pack(pady=5)
 
     def submit():
+        name = participant_dropdown.get().strip()
+        event = event_dropdown.get().strip()
+        position = entry_position.get().strip()
+        
+
         if name == "":
             tk.Label(main_frame, text="Name cannot be empty.").pack(pady=5)
             return
+        
+        if event == "":
+            tk.Label(main_frame, text="Event cannot be empty.").pack(pady=5)
+            return
+        
+        if position == "":
+            tk.Label(main_frame, text="Position cannot be empty.").pack(pady=5)
+            return
+        
         results_list.append({
             'event': event_dropdown.get(),
             'participant': participant_dropdown.get(),
@@ -401,7 +450,6 @@ def clear_frame(frame):
 
 
 #------------------------------#
-#Menu Buttons 
 
 load_data() #this will load the data from the JSON file when the app is started, this ensures that the data is not lost when the app is closed 
 show_home()  # home page start 

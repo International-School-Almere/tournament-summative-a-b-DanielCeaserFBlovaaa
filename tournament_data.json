@@ -94,6 +94,11 @@
             "name": "TESTPARTICIPANT20",
             "age": "19",
             "ID": 71
+        },
+        {
+            "name": "Enter your name",
+            "age": "Enter your age",
+            "ID": 267
         }
     ],
     "teams": [
@@ -181,7 +186,7 @@
         }
     ],
     "EventTypes": [
-            "Individual",
-            "Team"  
+        "Individual",
+        "Team"
     ]
 }

@@ -277,6 +277,32 @@ This all stammed from old laziness/issues in my code from where I didn't initial
 In the future, I will rely more on my old codes to find fixes instead of having to go over my code myself. This will save me a lot of time and effort and make it a lot easier to fix problems or find new features that I can add into a program.
 
 ---
+## Session [09]
+**Date:** [21/04/2026]  
+**Time spent:** [45 Minutes]  
+**Focus:** [In this session I collected peer feedback, and from there improved 2 of the points that were given to me. 1: Fixing the fact that users can submit empty boxes in some features, and 2: Fixing that users are able to write in the drop-down menus.]
+
+### Problems / Challenges
+- There wasn't an significant challenge in this session, everything ran quite smoothly and fixes were found fairly quickly and easily. 
+
+
+### Solutions / Actions Taken
+- In this session I collected peer feedback, which has given me another perspective on my program and allows me to improve it even further. Both focuses in this session were found quick, with simple changes requiring minimal changes in my code. This allows me to keep the structure I want in my code, and allows for easier maintanance and problem-solving for now, and in the future. 
+
+### Evidence
+- [Added code]
+
+
+### Reflection
+- What went well?
+Finding the fixes that were recommended by the peer feedback was very simple and quick, allowing me to spend more time on my reflection and making sure the new fixes fully work without any issues, which will help me in the future as I won't have to go back to fix it (doing the opposite of this and not testing the new fixes was mentioned in past progress sessions as well, where I mentioned I need to work on this so I have improved majorly on this.)
+
+- What needs improvement?
+In future sessions I will work on the other feedback points which needs to be fixed.
+
+- What did I learn?
+I learned a lot about making sure that the fix is actually fixed now, instead of a half-fix and then moving on to the next thing to be quicker. This in the end allows me to save more time and energy, and create a more professional program and structure.
+
 
 # 7. Problems and Fixes
 
@@ -285,7 +311,6 @@ In the future, I will rely more on my old codes to find fixes instead of having 
 
 | All buttons except for the exit button do not work | The most likely cause of this problem was that main_frame was being mixed with root, this caused for some buttons to be paired to main_frame which was used for the GUI, but also some to root which caused those not to work. | I put everything under main_frame, which was a simple but confusing fix, and required me to scan through my entire code and find all that are linked to root. | FIXED|
 
-| [Leaderboard Issues] | [Why it happened] | [What you did] | Open / Fixed |
 
 ---
 
