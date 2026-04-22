@@ -183,6 +183,12 @@
             "participant": "Bram",
             "position": 3,
             "points": 6
+        },
+        {
+            "event": "TESTEVENT2",
+            "participant": "TESTTEAM1",
+            "position": 1,
+            "points": 10
         }
     ],
     "EventTypes": [

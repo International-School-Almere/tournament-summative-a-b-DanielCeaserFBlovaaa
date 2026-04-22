@@ -136,13 +136,6 @@ main_frame = tk.Frame(root)
 main_frame.pack(pady=20)
 tk.Label(main_frame, text="Tournament System", font=("Arial", 20)).pack(pady=20)
     
-    
-#Functions 
-def onclick(event):
-    event.delete(0, tk.END) 
-    event.widget.delete(0, tk.END) #this will clear the entry box when the user clicks on it, for better structure and a more professional app
-    
-  
 
 #Add Participant page
 def add_participant_page():
@@ -151,16 +144,13 @@ def add_participant_page():
     add_home_button()
     tk.Label(main_frame, text="Please remember your participant ID, as you will need it for more.").pack(pady=5)
    
+    tk.Label(main_frame, text="Enter your name:").pack(pady=5)
     entry_name = tk.Entry(main_frame)
-    entry_name.pack(pady=10)
-    entry_name.insert(0, "Enter your name")
-    entry_name.bind("<FocusIn>", onclick) #this will clear the entry box when the user clicks on it, for better structure and a more professional app
+    entry_name.pack(pady=10)        
     
+    tk.Label(main_frame, text="Enter your age:").pack(pady=5)
     entry_age = tk.Entry(main_frame)
-    entry_age.pack()
     entry_age.pack(pady=10)
-    entry_age.insert(0, "Enter your age")
-    entry_age.bind("<FocusIn>", onclick) #this will clear the entry box when the user clicks on it, for better structure and a more professional app
     
     result_laber = tk.Label(main_frame, text="")
     result_laber.pack(pady=5)
@@ -210,23 +200,18 @@ def add_team_page():
     tk.Label(main_frame, text="Add a Team", font=("Arial", 20)).pack(pady=20)
     add_home_button()
     tk.Label(main_frame, text="Please remember your team ID, as you will need it for more.").pack(pady=5)
-
+    
+    tk.Label(main_frame, text="Enter your team name:").pack(pady=5)
     entry_name = tk.Entry(main_frame)
     entry_name.pack(pady=10)
-    entry_name.insert(0, "Enter your team name")
-    entry_name.bind("<FocusIn>", onclick) #this will clear the entry box when the user clicks on it, for better structure and a more professional app
     
+    tk.Label(main_frame, text="Enter the name of the contact person for the team:").pack(pady=5)
     entry_contactperson = tk.Entry(main_frame)
-    entry_contactperson.pack()
     entry_contactperson.pack(pady=10)
-    entry_contactperson.insert(0, "Enter the name of the contact person for the team")
-    entry_contactperson.bind("<FocusIn>", onclick) 
-
+    
+    tk.Label(main_frame, text="Enter the contact details for the team:").pack(pady=5)
     entry_contactdetails = tk.Entry(main_frame)
-    entry_contactdetails.pack()
     entry_contactdetails.pack(pady=10)
-    entry_contactdetails.insert(0, "Enter the email address of the contact person for the team")
-    entry_contactdetails.bind("<FocusIn>", onclick)
 
     result_laber = tk.Label(main_frame, text="")
     result_laber.pack(pady=5)
@@ -282,22 +267,17 @@ def create_event_page():
     add_home_button()
     tk.Label(main_frame, text="Please remember your event ID, as you will need it for more.").pack(pady=5)
 
+    tk.Label(main_frame, text="Enter the event name:").pack(pady=5)
     entry_name = tk.Entry(main_frame)
     entry_name.pack(pady=10)
-    entry_name.insert(0, "Enter the event name")
-    entry_name.bind("<FocusIn>", onclick) 
 
+    tk.Label(main_frame, text="Is the event individual or team-based? (Individual/Team)").pack(pady=5)
     entry_type = tk.Entry(main_frame)
-    entry_type.pack()
     entry_type.pack(pady=10)
-    entry_type.insert(0, "Is the event individual or team-based?")
-    entry_type.bind("<FocusIn>", onclick)
 
+    tk.Label(main_frame, text="Is the event based on a sport or academic competition? (Sport/Academic)").pack(pady=5)
     entry_category = tk.Entry(main_frame)
-    entry_category.pack()
     entry_category.pack(pady=10)
-    entry_category.insert(0, "Is the event based on a sport or academic competition? (Sport/Academic)")
-    entry_category.bind("<FocusIn>", onclick)
 
     result_laber = tk.Label(main_frame, text="")
     result_laber.pack(pady=5)
@@ -360,10 +340,9 @@ def enter_results_page():
     participant_dropdown.set("Select Participant/Team")
     participant_dropdown.bind("<FocusIn>", onclick)
 
+    tk.Label(enter_results_frame, text="Enter final position (1-5):").pack(pady=5)
     entry_position = tk.Entry(enter_results_frame)
-    entry_position.pack(pady=5)
-    entry_position.insert(0, "Enter the final position (1-5)")
-    entry_position.bind("<FocusIn>", onclick)
+    entry_position.pack(pady=10)
 
     result_laber = tk.Label(main_frame, text="")
     result_laber.pack(pady=5)

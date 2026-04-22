@@ -277,7 +277,7 @@ This all stammed from old laziness/issues in my code from where I didn't initial
 In the future, I will rely more on my old codes to find fixes instead of having to go over my code myself. This will save me a lot of time and effort and make it a lot easier to fix problems or find new features that I can add into a program.
 
 ---
-## Session [09]
+## Session [10]
 **Date:** [21/04/2026]  
 **Time spent:** [45 Minutes]  
 **Focus:** [In this session I collected peer feedback, and from there improved 2 of the points that were given to me. 1: Fixing the fact that users can submit empty boxes in some features, and 2: Fixing that users are able to write in the drop-down menus.]
@@ -302,7 +302,32 @@ In future sessions I will work on the other feedback points which needs to be fi
 
 - What did I learn?
 I learned a lot about making sure that the fix is actually fixed now, instead of a half-fix and then moving on to the next thing to be quicker. This in the end allows me to save more time and energy, and create a more professional program and structure.
+---
+## Session [11]
+**Date:** [22/04/2026]  
+**Time spent:** [30 Minutes]  
+**Focus:** [In this session, the main focus was removing the OnClick function which wasn't working before, and putting the text inside the boxes outside, to get rid of the problem of the users having to remove the text inside boxes themselves.]
 
+### Problems / Challenges
+- It was a "lightbulb" moment for me, to just get rid of OnClick, and putting the text outside the boxes to get rid of the problem. Finding this was a long trial of trying stuff and things not working. But it has paid off.
+
+
+### Solutions / Actions Taken
+- I had decided to re-design the boxes, and now have just put the description texts above the boxes instead of inside of them. This only took removing some lines of code and changing small parts of them (for exammple: removing the lines containing "OnClick" and "Insert" which has now given me the fix.)
+
+### Evidence
+- [Added code]
+
+
+### Reflection
+- What went well?
+I have further progressed with the code and am now finalizing it, which allows me to focus on the reflection and finding any more bugs that I could've looked over. This shows good time and work management, which is helping me a lot right now.
+
+- What needs improvement?
+I have one more point of teacher feedback, which is to make a seperate page to view the participants/teams and events data.
+
+- What did I learn?
+I have learned that sometimes, the best fix is just to change the design, which I had done to find the OnClick fix. 
 
 # 7. Problems and Fixes
 
