@@ -62,6 +62,7 @@ def show_home():
     tk.Button(main_frame, text="Create Event", command=create_event_page).pack(side="left", padx=5)
     tk.Button(main_frame, text="Enter Results", command=enter_results_page).pack(side="left", padx=5)
     tk.Button(main_frame, text="Leaderboard", command=show_leaderboard).pack(side="left", padx=5)
+    tk.Button(main_frame, text="View All Data", command=show_data_page).pack(side="left", padx=5)
     tk.Button(main_frame, text="Exit", command=root.quit).pack(side="right", padx=5)
 
 
@@ -420,6 +421,66 @@ def show_leaderboard():
 #Return to Home button on each page without having to submit first
 def add_home_button():
     tk.Button(main_frame, text="Return to Home", command=show_home).pack(pady=10)
+
+def show_data_page():
+    clear_frame(main_frame)
+
+    tk.Label(main_frame, text="View Data", font=("Arial", 20)).pack(pady=20)
+    add_home_button()
+
+    tk.Button(main_frame, text="Participants", command=show_participants).pack(pady=5)
+    tk.Button(main_frame, text="Teams", command=show_teams).pack(pady=5)
+    tk.Button(main_frame, text="Events", command=show_events).pack(pady=5)
+    tk.Button(main_frame, text="Results", command=show_results).pack(pady=5)
+
+def show_participants():
+        clear_frame(main_frame)
+        tk.Label(main_frame, text="Participants", font=("Arial", 20)).pack(pady=20)
+        add_home_button()
+
+        if not participants_list:
+            tk.Label(main_frame, text="No participants added.").pack()
+            return
+
+        for p in participants_list[:15]:  # limit to avoid too much information on the screen
+            tk.Label(main_frame, text=f"{p['name']} (Age: {p['age']}, ID: {p['ID']})").pack(anchor="w", padx=20)
+
+def show_teams():
+        clear_frame(main_frame)
+        tk.Label(main_frame, text="Teams", font=("Arial", 20)).pack(pady=20)
+        add_home_button()
+
+        if not teams_list:
+            tk.Label(main_frame, text="No teams added.").pack()
+            return
+
+        for t in teams_list:
+            tk.Label(main_frame, text=f"{t['teamname']} (Contact: {t['contactperson']}, ID: {t['teamID']})").pack(anchor="w", padx=20)        
+
+def show_events():
+        clear_frame(main_frame)
+        tk.Label(main_frame, text="Events", font=("Arial", 20)).pack(pady=20)
+        add_home_button()
+
+        if not events_list:
+            tk.Label(main_frame, text="No events created.").pack()
+            return
+
+        for e in events_list:
+            tk.Label(main_frame, text=f"{e['name']} ({e['type']}, {e['category']}, ID: {e['ID']})").pack(anchor="w", padx=20)
+
+def show_results():
+        clear_frame(main_frame)
+        tk.Label(main_frame, text="Results", font=("Arial", 20)).pack(pady=20)
+        add_home_button()
+
+        if not results_list:
+            tk.Label(main_frame, text="No results entered.").pack()
+            return
+
+        for r in results_list:
+            tk.Label(main_frame, text=f"{r['participant']} - {r['event']} (Pos: {r['position']}, Points: {r['points']})").pack(anchor="w", padx=20)
+
 
 #Clear Function
 def clear_frame(frame):

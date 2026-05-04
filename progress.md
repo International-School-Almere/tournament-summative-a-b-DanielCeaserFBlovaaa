@@ -328,6 +328,32 @@ I have one more point of teacher feedback, which is to make a seperate page to v
 
 - What did I learn?
 I have learned that sometimes, the best fix is just to change the design, which I had done to find the OnClick fix. 
+---
+## Session [12]
+**Date:** [04/05/2026]  
+**Time spent:** [45 Minutes]  
+**Focus:** [In this session, the main focus was finalizing the app, and applying the last point of teacher feedback which was to add a "View All Data" page in the app.]
+
+### Problems / Challenges
+- it was difficult to find a good fix for this problem, as first I tried to just dump all the data into one page but this was extremely unorganized, and required features like scrolling to be added into the app which would take a lot more time for a less appropriate result. 
+
+
+### Solutions / Actions Taken
+- I decided it would be a better idea to create seperate pages inside of the view all data page, with the data of participants, teams, events and results accessible. This made it extremely easy to add and keep structured. One thing I did have to limit was the amount of participants viewable on the page, which I limited to 15 to keep it organized and readable. 
+
+### Evidence
+- [Added code]
+
+
+### Reflection
+- What went well?
+I have now been able to finish the program, optimized from personal reflections, peer feedback and teacher feedback. But specifically in this session, I was able to find a simple fix to the issue, and further improve my app and it's usability. 
+
+- What needs improvement?
+It did take me some time to find the fix, as I tried a completely different way at first which I found not working quite to my standards and likings. Next time I will try to create a plan of how I approximetly want the fix to look like, and maybe a pseudocode to further give myself a guide of some sort.
+
+- What did I learn?
+That creating a form of guidance before jumping into a fix is more effective and efficient in time-saving and creating a better fix. 
 
 # 7. Problems and Fixes
 
